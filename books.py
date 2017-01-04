@@ -5,8 +5,8 @@ import distance
 import sys
 
 # get keys from goodreads 
-# MY_KEY = CONSUMER KEY 
-# MY_SECRET = CONSUMER SECRET
+# MY_KEY = GET CONSUMER KEY FROM GOODREADS.COM
+# MY_SECRET = GET CONSUMER SECRET FROM GOODREADS.COM
 
 goodreads = OAuth1Service(
     consumer_key= MY_KEY,
@@ -28,7 +28,7 @@ while accepted.lower() == 'n':
 session = goodreads.get_auth_session(request_token, request_token_secret)
 
 #read through the text file, each line is parsed as a separate entry 
-file_name = raw_input('Enter name of .txt file with book: ')
+file_name = raw_input('Enter name of .txt file with book titles: ')
 with open(file_name) as f:
     for book in f:
         first_match = None 
